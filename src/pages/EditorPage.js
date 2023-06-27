@@ -20,6 +20,7 @@ const EditorPage = () => {
     const [clients, setClients] = useState([]);
 
     useEffect(() => {
+        console.log('location', location);
         const init = async () => {
             socketRef.current = await initSocket();
             socketRef.current.on('connect_error', (err) => handleErrors(err));
